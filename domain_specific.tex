@@ -1,8 +1,5 @@
 SymPy includes several packages that allow users to solve domain specific
-problems. For example, a comprehensive physics package is included that is
-useful for solving problems in mechanics, optics, and quantum
-mechanics along with support for manipulating physical quantities with units.
-
+problems, primarily in classical and quantum physics.
 
 \subsection{Classical Mechanics}
 One of the core domains that SymPy suports is the physics of classical
@@ -72,7 +69,7 @@ well as operations on these objects such as representations, tensor products,
 inner products, outer products, commutators, and anticommutators. The base
 objects are designed in the most general way possible to enable any particular
 quantum system to be implemented by subclassing the base operators and defining
-the relevant class methods to provide system-specific logic.
+the relevant methods to provide system-specific logic.
 
 Symbolic quantum operators and states may be defined, and one can perform
 a full range of operations with them.
@@ -133,12 +130,11 @@ qubit from the right using a Pauli-X gate:
 
 \begin{verbatim}
 >>> from sympy.physics.quantum.qubit import Qubit
->>> from sympy.physics.quantum.gate import XGate
+>>> from sympy.physics.quantum.gate import X
 >>> q = Qubit('0101')
 >>> q
 |0101>
->>> X = XGate(1)
->>> qapply(X*q)
+>>> qapply(X(1)*q)
 |0111>
 \end{verbatim}
 Qubit states can also be used in adjoint operations, tensor products, inner/outer
